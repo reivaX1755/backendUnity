@@ -68,6 +68,3 @@ def add_partida():
         return jsonify({'message': 'Partida añadida correctamente'}), 201
     except Exception as e:
         return jsonify({'error': str(e)}), 400
-
-if __name__ == '__main__':
-    app.run(debug=True)
