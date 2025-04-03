@@ -17,7 +17,7 @@ def test_db():
     try:
         cursor = mysql.connection.cursor()
         # Usamos el nuevo nombre de base de datos
-        cursor.execute("USE freedb_unityquestdb")
+        cursor.execute("USE bdplataformas2d_connect")
         cursor.execute("SELECT DATABASE()") 
         db_name = cursor.fetchone()
         cursor.close()
@@ -30,7 +30,7 @@ def get_top_partidas():
     try:
         cursor = mysql.connection.cursor()
         # Usamos el nuevo nombre de base de datos
-        cursor.execute("USE freedb_unityquestdb")
+        cursor.execute("USE bdplataformas2d_connect")
         cursor.execute("SELECT id, monedas, fecha_hora FROM partidas ORDER BY monedas DESC LIMIT 8")
         partidas = cursor.fetchall()
         cursor.close()
@@ -57,7 +57,7 @@ def add_partida():
         
         cursor = mysql.connection.cursor()
         # Usamos el nuevo nombre de base de datos
-        cursor.execute("USE freedb_unityquestdb")
+        cursor.execute("USE bdplataformas2d_connect")
         cursor.execute(
             "INSERT INTO partidas (monedas, fecha_hora) VALUES (%s, %s)",
             (monedas, fecha_hora)
