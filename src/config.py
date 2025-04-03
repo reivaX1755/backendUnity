@@ -1,0 +1,14 @@
+from dotenv import load_dotenv
+import os
+
+# Cargar variables de entorno desde .env
+load_dotenv()
+
+import os
+
+class Config:
+    MYSQL_HOST = os.getenv("DB_HOST", "sql.freedb.tech")
+    MYSQL_USER = os.getenv("DB_USER", "freedb_unityquestdb_admin")
+    MYSQL_PASSWORD = os.getenv("DB_PASS", "bNzQ@rYgFb2tqga")
+    MYSQL_PORT = int(os.getenv("DB_PORT", 3306))
+    MYSQL_DATABASE = os.getenv("DB_NAME", "freedb_unityquestdb")
